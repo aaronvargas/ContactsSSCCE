@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public void pickContact(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
 
-        // if we want to limit to ONLY show contacts with an Address use this below
-        // intent.setType(ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_TYPE);
-
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, PICK_CONTACT);
         }
